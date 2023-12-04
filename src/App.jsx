@@ -1,8 +1,8 @@
-import Bulbasaur from "./components/PokemonCard"
+import PokemonCard from "./components/PokemonCard"
 
 function App(){
 return <div>
-      <Bulbasaur/>
+      <PokemonCard/>
     </div>
 }
     
