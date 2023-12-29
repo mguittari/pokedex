@@ -1,5 +1,6 @@
 import PokemonCard from "./components/PokemonCard";
 import { useState } from "react";
+import "../src/App.css";
 
 function App() {
   const pokemonList = [
@@ -34,10 +35,28 @@ function App() {
       id: 25,
     },
     {
+      name: "Oddish",
+      imgSrc:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/43.png",
+      id: 43,
+    },
+    {
       name: "Psyduck",
       imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/54.png",
       id: 54,
+    },
+    {
+      name: "Magnemite",
+      imgSrc:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/81.png",
+      id: 81,
+    },
+    {
+      name: "Farfetch'd",
+      imgSrc:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/83.png",
+      id: 83,
     },
     {
       name: "Drowzee",
@@ -51,12 +70,29 @@ function App() {
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/131.png",
       id: 131,
     },
-
+    {
+      name: "Porygon",
+      imgSrc:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/137.png",
+      id: 137,
+    },
     {
       name: "Mew",
       imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/151.png",
       id: 151,
+    },
+    {
+      name: "Crobat",
+      imgSrc:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/169.png",
+      id: 169,
+    },
+    {
+      name: "Sudowoodo",
+      imgSrc:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/185.png",
+      id: 185,
     },
   ];
 
@@ -83,7 +119,6 @@ function App() {
 
   return (
     <div>
-      <h1>POKEDEX</h1>
       <PokemonCard pokemon={pokemon} />
       {pokemonIndex > 0 && (
         <button className="previous-button" onClick={handleClickPrevious}>
