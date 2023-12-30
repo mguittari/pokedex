@@ -1,4 +1,5 @@
 import PokemonCard from "./components/PokemonCard";
+import NavBar from "./components/NavBar";
 import { useState } from "react";
 import "../src/App.css";
 
@@ -47,6 +48,12 @@ function App() {
       id: 54,
     },
     {
+      name: "Golduck",
+      imgSrc:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/55.png",
+      id: 55,
+    },
+    {
       name: "Magnemite",
       imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/81.png",
@@ -57,6 +64,12 @@ function App() {
       imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/83.png",
       id: 83,
+    },
+    {
+      name: "Gastly",
+      imgSrc:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/92.png",
+      id: 92,
     },
     {
       name: "Drowzee",
@@ -98,38 +111,14 @@ function App() {
 
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
-  const pokemon = pokemonList[pokemonIndex];
-
-  const handleClickNext = () => {
-    if (pokemonIndex <= pokemonList.length) {
-      setPokemonIndex(pokemonIndex + 1);
-    }
-    console.log("click");
-  };
-
-  /* setPokemonIndex((precedentIndex) =>
-    Math.min(precedentIndex + 1, pokemonList.length - 1)
-  ); */
-
-  const handleClickPrevious = () => {
-    if (pokemonIndex >= 0) {
-      setPokemonIndex(pokemonIndex - 1);
-    }
-  };
-
   return (
     <div>
-      <PokemonCard pokemon={pokemon} />
-      {pokemonIndex > 0 && (
-        <button className="previous-button" onClick={handleClickPrevious}>
-          Previous
-        </button>
-      )}
-      {pokemonIndex < pokemonList.length - 1 && (
-        <button className="next-button" onClick={handleClickNext}>
-          Next
-        </button>
-      )}
+      <PokemonCard pokemon={pokemonList[pokemonIndex]} />
+      <NavBar
+        pokemonList={pokemonList}
+        pokemonIndex={pokemonIndex}
+        setPokemonIndex={setPokemonIndex}
+      />
     </div>
   );
 }
