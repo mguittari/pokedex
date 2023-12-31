@@ -72,6 +72,12 @@ function App() {
       id: 92,
     },
     {
+      name: "Haunter",
+      imgSrc:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/93.png",
+      id: 93,
+    },
+    {
       name: "Drowzee",
       imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/96.png",
@@ -111,6 +117,10 @@ function App() {
 
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
+  const handlePokemonClick = (index) => {
+    setPokemonIndex(index);
+  };
+
   return (
     <div>
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
@@ -118,6 +128,7 @@ function App() {
         pokemonList={pokemonList}
         pokemonIndex={pokemonIndex}
         setPokemonIndex={setPokemonIndex}
+        onPokemonClick={handlePokemonClick}
       />
     </div>
   );
